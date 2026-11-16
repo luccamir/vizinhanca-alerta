@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-font-size="16">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Equipe do VizinhançaAlerta — Global Solution 2026/2, FIAP Engenharia de Software.">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>VizinhançaAlerta | Equipe</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="img/logo.svg" alt="" width="36" height="36">
+        <span class="brand__text">
+          <span class="brand__name">VizinhançaAlerta</span>
+          <span class="brand__slogan">Tecnologia comunitária que antecipa enchentes de rua em rua.</span>
+        </span>
+      </a>
+
+      <a class="btn btn--sos" href="index.html#emergencia">Emergência</a>
+
+      <button type="button" class="main-nav__toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span class="main-nav__toggle-icon" aria-hidden="true"></span>
+        <span class="main-nav__toggle-texto">Menu</span>
+      </button>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <ul class="main-nav__list" role="list">
+          <li><a class="main-nav__link" href="index.html">Início</a></li>
+          <li><a class="main-nav__link" href="solucao.html">Mapa e rotas</a></li>
+          <li><a class="main-nav__link" href="impacto.html">Como funciona</a></li>
+          <li><a class="main-nav__link" href="equipe.html" aria-current="page">Equipe</a></li>
+          <li>
+            <button type="button" class="main-nav__letra" id="btn-letra" aria-pressed="false">
+              <span class="main-nav__letra-icone" aria-hidden="true">Aa</span> Letra maior
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+
+    <section class="section" aria-labelledby="equipe-titulo">
+      <div class="container">
+        <header class="section__header">
+          <p class="kicker">Global Solution 2026/2 · FIAP</p>
+          <h1 class="section__title" id="equipe-titulo">Equipe</h1>
+          <p class="section__lead">
+            Estudantes de Engenharia de Software da FIAP, turma 1ESOB.
+          </p>
+        </header>
+
+        <ul class="team-grid" role="list">
+          <li class="team-card">
+            <img class="team-card__photo" src="img/avatar-placeholder.svg" width="96" height="96"
+                 alt="Foto de Edgard Fernandes da Costa, integrante da equipe VizinhançaAlerta">
+            <h2 class="team-card__name">Edgard Fernandes da Costa</h2>
+            <p class="team-card__rm">RM: 569538</p>
+          </li>
+          <li class="team-card">
+            <img class="team-card__photo" src="img/avatar-placeholder.svg" width="96" height="96"
+                 alt="Foto de Lucca Miranda Rodrigues, integrante da equipe VizinhançaAlerta">
+            <h2 class="team-card__name">Lucca Miranda Rodrigues</h2>
+            <p class="team-card__rm">RM: 571057</p>
+          </li>
+          <li class="team-card">
+            <img class="team-card__photo" src="img/avatar-placeholder.svg" width="96" height="96"
+                 alt="Foto de Otávio Miguel Rocha, integrante da equipe VizinhançaAlerta">
+            <h2 class="team-card__name">Otávio Miguel Rocha</h2>
+            <p class="team-card__rm">RM: 570739</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Em emergência ligue <strong>193</strong> (Bombeiros), <strong>192</strong> (SAMU) ou <strong>199</strong> (Defesa Civil).</p>
+      <nav class="site-footer__nav" aria-label="Navegação do rodapé">
+        <ul role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="solucao.html">Mapa e rotas</a></li>
+          <li><a href="impacto.html">Como funciona</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+        </ul>
+      </nav>
+      <p>VizinhançaAlerta · Global Solution 2026/2 · FIAP · ODS 11 e 13</p>
+    </div>
+  </footer>
+
+  <script src="js/dados.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

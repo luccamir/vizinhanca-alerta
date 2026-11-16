@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-font-size="16">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VizinhançaAlerta: canal de socorro, alertas de alagamento rua a rua e unidades de atendimento na Zona Leste de São Paulo.">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>VizinhançaAlerta | Início</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-current="page">
+        <img class="brand__logo" src="img/logo.svg" alt="" width="36" height="36">
+        <span class="brand__text">
+          <span class="brand__name">VizinhançaAlerta</span>
+          <span class="brand__slogan">Tecnologia comunitária que antecipa enchentes de rua em rua.</span>
+        </span>
+      </a>
+
+      <a class="btn btn--sos" href="index.html#emergencia">Emergência</a>
+
+      <button type="button" class="main-nav__toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span class="main-nav__toggle-icon" aria-hidden="true"></span>
+        <span class="main-nav__toggle-texto">Menu</span>
+      </button>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <ul class="main-nav__list" role="list">
+          <li><a class="main-nav__link" href="index.html">Início</a></li>
+          <li><a class="main-nav__link" href="solucao.html">Mapa e rotas</a></li>
+          <li><a class="main-nav__link" href="impacto.html">Como funciona</a></li>
+          <li><a class="main-nav__link" href="equipe.html">Equipe</a></li>
+          <li>
+            <button type="button" class="main-nav__letra" id="btn-letra" aria-pressed="false">
+              <span class="main-nav__letra-icone" aria-hidden="true">Aa</span> Letra maior
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+
+    <!-- 1. CANAL DE SOCORRO: a primeira coisa que a pessoa vê -->
+    <section class="sos" id="emergencia" aria-labelledby="sos-titulo">
+      <div class="container sos__inner">
+        <div class="sos__texto">
+          <p class="kicker">Emergência · Zona Leste de São Paulo</p>
+          <h1 class="sos__titulo" id="sos-titulo">Precisa de ajuda <span class="sos__titulo-destaque">agora?</span></h1>
+          <p class="sos__lead">Se alguém corre risco de vida, ligue para um número oficial. A ligação é gratuita, mesmo sem crédito no celular.</p>
+        </div>
+
+        <div class="sos__numeros">
+          <h2 class="sos__numeros-titulo">Números oficiais de emergência</h2>
+          <p class="sos__numeros-sub">Toque no cartão: o telefone abre com o número já digitado, é só apertar para chamar.</p>
+          <ul class="sos-grid" role="list">
+            <li>
+              <a class="sos-card sos-card--bombeiros" href="tel:193">
+                <span class="visually-hidden">Ligar para </span>
+                <span class="sos-card__numero">193</span>
+                <span class="sos-card__nome">Bombeiros</span>
+                <span class="sos-card__desc">Pessoa ilhada ou presa pela água</span>
+                <span class="sos-card__ligar" aria-hidden="true">Ligar</span>
+              </a>
+            </li>
+            <li>
+              <a class="sos-card sos-card--samu" href="tel:192">
+                <span class="visually-hidden">Ligar para </span>
+                <span class="sos-card__numero">192</span>
+                <span class="sos-card__nome">SAMU</span>
+                <span class="sos-card__desc">Pessoa ferida ou passando mal</span>
+                <span class="sos-card__ligar" aria-hidden="true">Ligar</span>
+              </a>
+            </li>
+            <li>
+              <a class="sos-card sos-card--defesa" href="tel:199">
+                <span class="visually-hidden">Ligar para </span>
+                <span class="sos-card__numero">199</span>
+                <span class="sos-card__nome">Defesa Civil</span>
+                <span class="sos-card__desc">Risco de alagamento ou deslizamento</span>
+                <span class="sos-card__ligar" aria-hidden="true">Ligar</span>
+              </a>
+            </li>
+            <li>
+              <a class="sos-card sos-card--policia" href="tel:190">
+                <span class="visually-hidden">Ligar para </span>
+                <span class="sos-card__numero">190</span>
+                <span class="sos-card__nome">Polícia Militar</span>
+                <span class="sos-card__desc">Situação de perigo ou violência</span>
+                <span class="sos-card__ligar" aria-hidden="true">Ligar</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sos__ajuda">
+          <h2 class="sos__ajuda-titulo">Não é emergência?</h2>
+          <p class="text-muted">Peça ajuda ou avise a vizinhança sobre algo que está acontecendo na sua rua.</p>
+          <div class="sos__acoes">
+            <a class="btn btn--verde" href="solucao.html?tipo=suporte#reportar">Pedir apoio</a>
+            <a class="btn btn--ghost" href="solucao.html#reportar">Avisar uma ocorrência</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="sos__dica">
+          Receba os alertas da Defesa Civil no celular: envie um SMS com o seu CEP para <strong>40199</strong>.
+          Bueiro entupido? Peça a limpeza à Prefeitura pelo <strong>156</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. ALERTAS DA REGIÃO -->
+    <section class="section" id="alertas" aria-labelledby="alertas-titulo">
+      <div class="container">
+        <div class="alertas__topo">
+          <div>
+            <h2 class="section__title" id="alertas-titulo">Alertas perto de você</h2>
+            <p class="section__lead">Ruas com bueiro entupido ou água subindo, avisadas pela vizinhança.</p>
+          </div>
+          <div class="campo-inline">
+            <label class="campo-inline__label" for="home-bairro">Seu bairro</label>
+            <select class="filtros__select" id="home-bairro">
+              <option value="">Todos os bairros</option>
+              <option value="Jardim Romano">Jardim Romano</option>
+              <option value="Itaim Paulista">Itaim Paulista</option>
+              <option value="Vila Jacuí">Vila Jacuí</option>
+              <option value="São Miguel Paulista">São Miguel Paulista</option>
+              <option value="Ermelino Matarazzo">Ermelino Matarazzo</option>
+            </select>
+          </div>
+        </div>
+
+        <ul class="alerta-lista" id="lista-alertas-home" role="list" aria-live="polite"></ul>
+        <p class="empty-state" id="alertas-vazio" hidden>Nenhum alerta de risco neste bairro no momento.</p>
+        <noscript>
+          <p class="empty-state">Ative o JavaScript do navegador para ver os alertas.</p>
+        </noscript>
+
+        <div class="alertas__rodape">
+          <span class="selo-simulacao">Dados simulados para demonstração do MVP</span>
+          <a class="btn btn--ghost" href="solucao.html#simulacao">Ver todas as ruas no mapa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. UNIDADES DE SOCORRO PERTO -->
+    <section class="section section--alt" id="unidades" aria-labelledby="unidades-titulo">
+      <div class="container stack">
+        <header class="section__header">
+          <h2 class="section__title" id="unidades-titulo">Unidades de socorro perto de você</h2>
+          <p class="section__lead">Toque em uma opção para abrir o mapa com as unidades mais próximas.</p>
+        </header>
+
+        <div class="campo-inline">
+          <label class="campo-inline__label" for="unidades-bairro">Procurar perto de</label>
+          <select class="filtros__select" id="unidades-bairro">
+            <option value="">Minha localização atual</option>
+            <option value="Jardim Romano">Jardim Romano</option>
+            <option value="Itaim Paulista">Itaim Paulista</option>
+            <option value="Vila Jacuí">Vila Jacuí</option>
+            <option value="São Miguel Paulista">São Miguel Paulista</option>
+            <option value="Ermelino Matarazzo">Ermelino Matarazzo</option>
+          </select>
+        </div>
+
+        <ul class="unidades-grid" role="list">
+          <li>
+            <a class="unidade-link" data-unidade="pronto socorro" target="_blank" rel="noopener noreferrer"
+               href="https://www.google.com/maps/search/?api=1&amp;query=pronto%20socorro%20perto%20de%20mim">
+              <span>
+                <span class="unidade-link__nome">Pronto-socorro e UPA</span>
+                <span class="unidade-link__desc">Atendimento de urgência</span>
+              </span>
+              <span class="visually-hidden">(abre o mapa em nova aba)</span>
+            </a>
+          </li>
+          <li>
+            <a class="unidade-link" data-unidade="hospital" target="_blank" rel="noopener noreferrer"
+               href="https://www.google.com/maps/search/?api=1&amp;query=hospital%20perto%20de%20mim">
+              <span>
+                <span class="unidade-link__nome">Hospitais</span>
+                <span class="unidade-link__desc">Casos graves e internação</span>
+              </span>
+              <span class="visually-hidden">(abre o mapa em nova aba)</span>
+            </a>
+          </li>
+          <li>
+            <a class="unidade-link" data-unidade="corpo de bombeiros" target="_blank" rel="noopener noreferrer"
+               href="https://www.google.com/maps/search/?api=1&amp;query=corpo%20de%20bombeiros%20perto%20de%20mim">
+              <span>
+                <span class="unidade-link__nome">Corpo de Bombeiros</span>
+                <span class="unidade-link__desc">Postos e quartéis da região</span>
+              </span>
+              <span class="visually-hidden">(abre o mapa em nova aba)</span>
+            </a>
+          </li>
+          <li>
+            <a class="unidade-link" data-unidade="delegacia de polícia" target="_blank" rel="noopener noreferrer"
+               href="https://www.google.com/maps/search/?api=1&amp;query=delegacia%20de%20pol%C3%ADcia%20perto%20de%20mim">
+              <span>
+                <span class="unidade-link__nome">Polícia e delegacias</span>
+                <span class="unidade-link__desc">Registro de ocorrências</span>
+              </span>
+              <span class="visually-hidden">(abre o mapa em nova aba)</span>
+            </a>
+          </li>
+          <li>
+            <a class="unidade-link" data-unidade="UBS posto de saúde" target="_blank" rel="noopener noreferrer"
+               href="https://www.google.com/maps/search/?api=1&amp;query=UBS%20posto%20de%20sa%C3%BAde%20perto%20de%20mim">
+              <span>
+                <span class="unidade-link__nome">UBS (posto de saúde)</span>
+                <span class="unidade-link__desc">Atendimento sem urgência</span>
+              </span>
+              <span class="visually-hidden">(abre o mapa em nova aba)</span>
+            </a>
+          </li>
+          <li>
+            <a class="unidade-link" data-unidade="subprefeitura" target="_blank" rel="noopener noreferrer"
+               href="https://www.google.com/maps/search/?api=1&amp;query=subprefeitura%20perto%20de%20mim">
+              <span>
+                <span class="unidade-link__nome">Subprefeitura</span>
+                <span class="unidade-link__desc">Limpeza de bueiros e zeladoria</span>
+              </span>
+              <span class="visually-hidden">(abre o mapa em nova aba)</span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="unidades__nota">
+          Os links abrem o Google Maps. Confirme endereço e horário antes de sair e nunca atravesse uma rua alagada.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. SOBRE: problema, cidadão, proposta e ODS -->
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container layout-split">
+        <div class="stack">
+          <h2 id="sobre-titulo">Por que o VizinhançaAlerta existe</h2>
+          <p>
+            Os alertas oficiais avisam a região inteira. Mas, nas várzeas da Zona Leste, a enchente começa
+            em uma rua específica, muitas vezes por um bueiro entupido, e a água sobe em minutos.
+          </p>
+          <p>
+            Quem mais precisa de tempo para sair, como <strong>idosos, gestantes e pessoas com deficiência</strong>,
+            fica sabendo tarde demais. O VizinhançaAlerta junta o aviso de quem mora na rua para ganhar esse tempo.
+          </p>
+          <p class="text-muted">
+            Bairros do piloto: Jardim Romano, Itaim Paulista, Vila Jacuí, São Miguel Paulista e Ermelino Matarazzo.
+          </p>
+          <ul class="ods-list" role="list" aria-label="Objetivos de Desenvolvimento Sustentável da ONU">
+            <li class="ods-tag ods-tag--11"><span class="ods-tag__num" aria-hidden="true">11</span> ODS 11 · Cidades e comunidades sustentáveis</li>
+            <li class="ods-tag ods-tag--13"><span class="ods-tag__num" aria-hidden="true">13</span> ODS 13 · Ação contra a mudança do clima</li>
+          </ul>
+        </div>
+
+        <article class="card">
+          <div class="stat">
+            <p class="stat__value">482 pontos registrados</p>
+            <p class="stat__label">Alagamentos e vias intransitáveis monitorados pelo CGE-SP durante a Operação Chuvas de Verão.</p>
+            <p class="stat__source"><a href="https://www.cgesp.org/v3/alagamentos.jsp" target="_blank" rel="noopener noreferrer">CGE-SP / Prefeitura de São Paulo<span class="visually-hidden"> (abre em nova aba)</span></a>. Acesso em: 13 nov. 2026.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Em emergência ligue <strong>193</strong> (Bombeiros), <strong>192</strong> (SAMU) ou <strong>199</strong> (Defesa Civil).</p>
+      <nav class="site-footer__nav" aria-label="Navegação do rodapé">
+        <ul role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="solucao.html">Mapa e rotas</a></li>
+          <li><a href="impacto.html">Como funciona</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+        </ul>
+      </nav>
+      <p>VizinhançaAlerta · Global Solution 2026/2 · FIAP · ODS 11 e 13</p>
+    </div>
+  </footer>
+
+  <script src="js/dados.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

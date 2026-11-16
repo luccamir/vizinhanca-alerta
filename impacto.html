@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-font-size="16">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Como o VizinhançaAlerta funciona: moradores avisam, a vizinhança e o socorro veem, e todos agem antes da água subir.">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>VizinhançaAlerta | Como funciona</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="img/logo.svg" alt="" width="36" height="36">
+        <span class="brand__text">
+          <span class="brand__name">VizinhançaAlerta</span>
+          <span class="brand__slogan">Tecnologia comunitária que antecipa enchentes de rua em rua.</span>
+        </span>
+      </a>
+
+      <a class="btn btn--sos" href="index.html#emergencia">Emergência</a>
+
+      <button type="button" class="main-nav__toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span class="main-nav__toggle-icon" aria-hidden="true"></span>
+        <span class="main-nav__toggle-texto">Menu</span>
+      </button>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <ul class="main-nav__list" role="list">
+          <li><a class="main-nav__link" href="index.html">Início</a></li>
+          <li><a class="main-nav__link" href="solucao.html">Mapa e rotas</a></li>
+          <li><a class="main-nav__link" href="impacto.html" aria-current="page">Como funciona</a></li>
+          <li><a class="main-nav__link" href="equipe.html">Equipe</a></li>
+          <li>
+            <button type="button" class="main-nav__letra" id="btn-letra" aria-pressed="false">
+              <span class="main-nav__letra-icone" aria-hidden="true">Aa</span> Letra maior
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+
+    <!-- PASSO A PASSO -->
+    <section class="section" aria-labelledby="impacto-titulo">
+      <div class="container stack-lg">
+        <header class="section__header">
+          <p class="kicker">O projeto</p>
+          <h1 class="section__title" id="impacto-titulo">Como funciona</h1>
+          <p class="section__lead">
+            Quem mora na rua vê o bueiro entupido antes de qualquer sistema.
+            O VizinhançaAlerta transforma esse aviso em tempo para sair de casa com segurança.
+          </p>
+        </header>
+
+        <ol class="steps" role="list">
+          <li class="steps__item">
+            <h2 class="steps__title">O morador avisa</h2>
+            <p class="text-muted">Bueiro entupido, água subindo ou alguém que vai precisar de ajuda para sair.</p>
+          </li>
+          <li class="steps__item">
+            <h2 class="steps__title">A vizinhança e o socorro veem</h2>
+            <p class="text-muted">A rua aparece no mapa com a rota de fuga para o morador e o acesso para o socorrista.</p>
+          </li>
+          <li class="steps__item">
+            <h2 class="steps__title">Todos agem antes da água subir</h2>
+            <p class="text-muted">Quem tem mais dificuldade de sair, como idosos, gestantes e PcD, recebe ajuda primeiro.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- QUEM PARTICIPA -->
+    <section class="section section--alt" id="ecossistema" aria-labelledby="ecossistema-titulo">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="ecossistema-titulo">Quem participa</h2>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3 class="card__title">Moradores e líderes comunitários</h3>
+            <p class="card__text">Avisam sobre bueiros e alagamentos e sabem quem, na rua, precisa de ajuda para sair de casa.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Comércio do bairro</h3>
+            <p class="card__text">Padarias, mercados e farmácias confirmam os avisos e podem servir de ponto de apoio.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Defesa Civil e Prefeitura</h3>
+            <p class="card__text">Recebem um retrato rua a rua, que complementa os alertas oficiais e ajuda a decidir onde agir primeiro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INCLUSÃO DIGITAL -->
+    <section class="section" id="inclusao-digital" aria-labelledby="inclusao-titulo">
+      <div class="container layout-split">
+        <div>
+          <h2 class="section__title" id="inclusao-titulo">Feito para celular simples e internet fraca</h2>
+          <p class="section__lead">Na periferia, o celular pré-pago com sinal instável é a regra.</p>
+        </div>
+        <ul class="lista-simples">
+          <li>Abre rápido: sem fontes, bibliotecas ou programas para baixar.</li>
+          <li>Funciona mesmo se o mapa não carregar: a lista de ruas e as rotas continuam disponíveis.</li>
+          <li>Botão "Letra maior" no menu, e a escolha fica salva no aparelho.</li>
+          <li>Pode ser usado só com o teclado ou com leitor de tela.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- O QUE OS MORADORES RELATAM (pesquisa em reportagens) -->
+    <section class="section section--alt" id="validacao" aria-labelledby="validacao-titulo">
+      <div class="container stack-lg">
+        <header class="section__header">
+          <p class="kicker">Pesquisa em reportagens</p>
+          <h2 class="section__title" id="validacao-titulo">O que os moradores relatam</h2>
+          <p class="section__lead">
+            Lemos reportagens sobre as enchentes no Jardim Pantanal, Jardim Helena, Vila Itaim e Vila Seabra,
+            bairros vizinhos ao Jardim Romano. Os relatos abaixo são de moradores ouvidos pela imprensa.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          <figure class="quote">
+            <blockquote class="quote__text">
+              <p>"O apoio aqui que estamos tendo é nós entre nós mesmos."</p>
+            </blockquote>
+            <figcaption class="quote__author">
+              Clarice Ferreira, líder comunitária da Vila Seabra.
+              <a href="https://www.brasildefato.com.br/2026/09/14/enchente-deixa-familias-ilhadas-apos-tres-dias-sem-resposta-na-zona-leste-de-sp-o-apoio-aqui-e-nos-entre-nos-mesmos/" target="_blank" rel="noopener noreferrer">Brasil de Fato, 14 set. 2026<span class="visually-hidden"> (abre em nova aba)</span></a>
+            </figcaption>
+          </figure>
+
+          <article class="relato">
+            <h3 class="relato__titulo">O aviso não chegou</h3>
+            <p>
+              Na enchente de fevereiro de 2025, moradores do Jardim Pantanal contaram que não receberam nenhum
+              comunicado da Defesa Civil para sair de casa. Um deles disse que, se tivesse sido avisado, teria
+              subido os móveis a tempo.
+            </p>
+            <p class="relato__fonte">
+              <a href="https://apublica.org/2025/02/sao-paulo-chuvas-deixam-moradores-ilhados-na-maior-cidade-do-pais/" target="_blank" rel="noopener noreferrer">Agência Pública, 6 fev. 2025<span class="visually-hidden"> (abre em nova aba)</span></a>
+            </p>
+          </article>
+
+          <article class="relato">
+            <h3 class="relato__titulo">Sem ajuda para sair</h3>
+            <p>
+              Um morador procurou um bote para levar a mãe, que tem deficiência visual, e não encontrou equipes:
+              atravessou cerca de 800 metros a pé, com água na cintura. Em 2026, um barco doado passou a levar
+              idosos e pessoas acamadas.
+            </p>
+            <p class="relato__fonte">
+              <a href="https://apublica.org/2025/02/sao-paulo-chuvas-deixam-moradores-ilhados-na-maior-cidade-do-pais/" target="_blank" rel="noopener noreferrer">Agência Pública, 2025<span class="visually-hidden"> (abre em nova aba)</span></a>
+              ·
+              <a href="https://tvtnews.com.br/jardim-pantanal-chega-ao-quinto-dia-de-alagamentos/" target="_blank" rel="noopener noreferrer">TVT News, 16 set. 2026<span class="visually-hidden"> (abre em nova aba)</span></a>
+            </p>
+          </article>
+        </div>
+
+        <article class="card">
+          <h3 class="card__title">O que esses relatos mudaram no VizinhançaAlerta</h3>
+          <ul class="lista-simples">
+            <li><strong>O aviso oficial chega tarde ou não chega.</strong> Por isso os alertas são feitos pelos próprios vizinhos, rua a rua.</li>
+            <li><strong>Quem tem mobilidade reduzida depende de alguém para sair.</strong> Por isso existe o "Pedir apoio" e o socorrista vê quantos idosos e PcD estão perto.</li>
+            <li><strong>Os vizinhos já se ajudam sozinhos</strong>, com barcos e marmitas. O app organiza essa rede, em vez de substituí-la.</li>
+            <li><strong>Ninguém sabe se o socorro está vindo.</strong> Por isso o morador vê "Socorro a caminho" assim que o atendimento começa.</li>
+          </ul>
+          <p class="card__footer">Próximo passo: conversar com moradores do Jardim Romano para validar o protótipo.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHAMADA -->
+    <section class="section" aria-labelledby="impacto-cta-titulo">
+      <div class="container">
+        <article class="card text-center stack">
+          <h2 id="impacto-cta-titulo">Veja na prática</h2>
+          <p class="section__lead">Escolha uma rua, veja as rotas e faça um aviso de teste.</p>
+          <p><a class="btn btn--primary" href="solucao.html">Abrir mapa e rotas</a></p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Em emergência ligue <strong>193</strong> (Bombeiros), <strong>192</strong> (SAMU) ou <strong>199</strong> (Defesa Civil).</p>
+      <nav class="site-footer__nav" aria-label="Navegação do rodapé">
+        <ul role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="solucao.html">Mapa e rotas</a></li>
+          <li><a href="impacto.html">Como funciona</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+        </ul>
+      </nav>
+      <p>VizinhançaAlerta · Global Solution 2026/2 · FIAP · ODS 11 e 13</p>
+    </div>
+  </footer>
+
+  <script src="js/dados.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

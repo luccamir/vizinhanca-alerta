@@ -1,0 +1,15 @@
+GLOBAL SOLUTION 2026/2 - CITIZENTECH
+FIAP - Engenharia de Software
+
+Grupo: VizinhançaAlerta
+Turma: 1ESOB
+
+Integrantes:
+- Edgard Fernandes da Costa - RM 569538
+- Lucca Miranda Rodrigues - RM 571057
+- Otávio Miguel Rocha - RM 570739
+
+Link do vídeo pitch (público): [INSERIR LINK PÚBLICO DO VÍDEO PITCH]
+Link do site publicado: [INSERIR LINK DO GITHUB PAGES OU VERCEL]
+
+Como abrir: dê dois cliques no arquivo index.html desta pasta.

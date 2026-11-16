@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-font-size="16">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mapa e rotas do VizinhançaAlerta: ruas em risco de alagamento na Zona Leste de São Paulo, rota de fuga para o morador, rota de acesso para o socorrista e formulário de pedido de apoio.">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>VizinhançaAlerta | Mapa e rotas</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="img/logo.svg" alt="" width="36" height="36">
+        <span class="brand__text">
+          <span class="brand__name">VizinhançaAlerta</span>
+          <span class="brand__slogan">Tecnologia comunitária que antecipa enchentes de rua em rua.</span>
+        </span>
+      </a>
+
+      <a class="btn btn--sos" href="index.html#emergencia">Emergência</a>
+
+      <button type="button" class="main-nav__toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span class="main-nav__toggle-icon" aria-hidden="true"></span>
+        <span class="main-nav__toggle-texto">Menu</span>
+      </button>
+
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <ul class="main-nav__list" role="list">
+          <li><a class="main-nav__link" href="index.html">Início</a></li>
+          <li><a class="main-nav__link" href="solucao.html" aria-current="page">Mapa e rotas</a></li>
+          <li><a class="main-nav__link" href="impacto.html">Como funciona</a></li>
+          <li><a class="main-nav__link" href="equipe.html">Equipe</a></li>
+          <li>
+            <button type="button" class="main-nav__letra" id="btn-letra" aria-pressed="false">
+              <span class="main-nav__letra-icone" aria-hidden="true">Aa</span> Letra maior
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+
+    <!-- SIMULAÇÃO: mapa, rotas, filtros e ruas -->
+    <section class="section" id="simulacao" aria-labelledby="simulacao-titulo">
+      <div class="container stack-lg">
+        <header class="section__header">
+          <p class="kicker">Ruas monitoradas · Zona Leste</p>
+          <h1 class="section__title" id="simulacao-titulo">Mapa e rotas</h1>
+          <p class="section__lead">
+            Escolha uma rua na lista para ver no mapa, saber para onde ir com segurança e por onde o socorro chega.
+          </p>
+          <p><span class="selo-simulacao">Dados simulados para demonstração do MVP</span></p>
+        </header>
+
+        <!-- Contadores dinâmicos -->
+        <ul class="kpi-grid" role="list" aria-label="Resumo do monitoramento">
+          <li class="kpi">
+            <span class="kpi__value" id="kpi-total">—</span>
+            <span class="kpi__label">Ruas monitoradas</span>
+          </li>
+          <li class="kpi kpi--alto">
+            <span class="kpi__value" id="kpi-alto">—</span>
+            <span class="kpi__label">Risco alto</span>
+          </li>
+          <li class="kpi kpi--medio">
+            <span class="kpi__value" id="kpi-obstruidos">—</span>
+            <span class="kpi__label">Bueiros entupidos</span>
+          </li>
+          <li class="kpi kpi--baixo">
+            <span class="kpi__value" id="kpi-reportes">—</span>
+            <span class="kpi__label">Avisos da vizinhança</span>
+          </li>
+        </ul>
+
+        <!-- Mapa real + painel de rotas -->
+        <div class="geo-wrapper">
+          <div class="mapa-geo-panel">
+            <div class="mapa-geo-panel__header">
+              <h2 class="mapa-geo-panel__title" id="mapa-titulo">Mapa da Zona Leste</h2>
+              <a class="mapa-geo-panel__link" id="mapa-osm-link"
+                 href="https://www.openstreetmap.org/#map=14/-23.4990/-46.4380"
+                 target="_blank" rel="noopener noreferrer">Abrir mapa maior<span class="visually-hidden"> (abre em nova aba)</span></a>
+            </div>
+
+            <div class="mapa-geo" id="mapa-geo">
+              <iframe class="mapa-geo__frame" id="mapa-osm"
+                      title="Mapa do OpenStreetMap com a visão geral da Zona Leste de São Paulo"
+                      src="https://www.openstreetmap.org/export/embed.html?bbox=-46.5000%2C-23.5200%2C-46.3800%2C-23.4780&amp;layer=mapnik"
+                      loading="lazy"></iframe>
+              <p class="mapa-geo__hud" aria-hidden="true">
+                <span class="mapa-geo__live">Ao vivo</span>
+                <span id="mapa-hud-texto">Visão geral · Zona Leste</span>
+              </p>
+            </div>
+
+            <p class="mapa-geo-panel__credito">
+              Mapa: © colaboradores do <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap<span class="visually-hidden"> (abre em nova aba)</span></a>.
+              Localizações aproximadas. Sem internet, a lista de ruas e as rotas continuam funcionando.
+            </p>
+            <p class="mapa-geo-panel__offline" id="mapa-offline" role="status" hidden>
+              Você está sem conexão: o mapa não vai carregar, mas a lista de ruas e as rotas continuam funcionando.
+            </p>
+          </div>
+
+          <!-- Painel de rotas -->
+          <aside class="rotas" id="painel-rotas" aria-labelledby="rotas-titulo">
+            <div>
+              <h2 class="rotas__title" id="rotas-titulo" tabindex="-1">Escolha uma rua</h2>
+              <p class="rotas__subtitle" id="rotas-subtitulo">Toque em uma rua da lista para ver as rotas.</p>
+            </div>
+
+            <div class="rotas__tabs" role="tablist" aria-label="Tipo de rota">
+              <button type="button" class="rotas__tab" id="aba-cidadao" role="tab"
+                      aria-selected="true" aria-controls="painel-cidadao">Sou morador</button>
+              <button type="button" class="rotas__tab" id="aba-socorrista" role="tab"
+                      aria-selected="false" aria-controls="painel-socorrista" tabindex="-1">Sou socorrista</button>
+            </div>
+
+            <div class="rotas__panel rotas__panel--cidadao" id="painel-cidadao" role="tabpanel" aria-labelledby="aba-cidadao" tabindex="0">
+              <h3 class="rotas__panel-title">Rota de fuga segura</h3>
+              <div id="cidadao-conteudo">
+                <p class="rotas__vazio">Escolha uma rua para ver o ponto de apoio mais perto e como chegar até ele sem passar pela água.</p>
+              </div>
+              <ul class="rotas__dicas" aria-label="Cuidados ao sair de casa">
+                <li>Nunca atravesse água em movimento, mesmo que pareça rasa.</li>
+                <li>Se for seguro, desligue a energia elétrica antes de sair.</li>
+                <li>Leve documentos, remédios e o celular carregado.</li>
+                <li>Avise e ajude vizinhos idosos, gestantes e PcD.</li>
+              </ul>
+              <a class="btn btn--verde btn--block rotas__gps" id="btn-gps-cidadao" target="_blank" rel="noopener noreferrer" hidden>
+                Abrir Rota de Evacuação no GPS<span class="visually-hidden"> (abre em nova aba)</span>
+              </a>
+            </div>
+
+            <div class="rotas__panel rotas__panel--socorrista" id="painel-socorrista" role="tabpanel" aria-labelledby="aba-socorrista" tabindex="0" hidden>
+              <!-- Antes do acesso: só o formulário de entrada -->
+              <div class="login" id="socorrista-login">
+                <h3 class="rotas__panel-title">Área do socorrista</h3>
+                <p class="login__intro">
+                  Só equipes de resgate (Defesa Civil, Bombeiros e SAMU) podem iniciar e finalizar atendimentos
+                  e ver os dados de quem pediu ajuda. Isso evita avisos falsos de "socorro a caminho".
+                </p>
+                <form class="login__form" id="form-login" novalidate aria-labelledby="aba-socorrista">
+                  <div class="form__group">
+                    <label class="form__label" for="login-matricula">Matrícula</label>
+                    <input class="form__input" type="text" id="login-matricula" name="matricula" autocomplete="username" placeholder="Ex.: DC-0001" aria-describedby="erro-login-matricula">
+                    <span class="form__error" id="erro-login-matricula" aria-live="polite"></span>
+                  </div>
+                  <div class="form__group">
+                    <label class="form__label" for="login-codigo">Código de acesso</label>
+                    <input class="form__input" type="password" id="login-codigo" name="codigo" autocomplete="current-password" aria-describedby="erro-login-codigo">
+                    <span class="form__error" id="erro-login-codigo" aria-live="polite"></span>
+                  </div>
+                  <div class="form-feedback" id="login-feedback" role="status" aria-live="polite"></div>
+                  <button type="submit" class="btn btn--primary btn--block" id="btn-entrar">Entrar como socorrista</button>
+                </form>
+                <p class="login__demo">
+                  Acesso de demonstração: matrícula <strong>DC-0001</strong> e código <strong>SOCORRO2026</strong>.
+                </p>
+              </div>
+
+              <!-- Depois do acesso: dados e ações do resgate -->
+              <div class="login__area" id="socorrista-area" hidden>
+                <div class="login__sessao">
+                  <span>Conectado como <strong id="socorrista-matricula">—</strong></span>
+                  <button type="button" class="btn btn--ghost btn--sm" id="btn-sair">Sair</button>
+                </div>
+                <h3 class="rotas__panel-title" id="socorrista-titulo" tabindex="-1">Rota de resgate</h3>
+                <div id="socorrista-conteudo">
+                  <p class="rotas__vazio">Escolha uma rua para ver o acesso sugerido, quantas pessoas vulneráveis estão perto e a situação do bueiro.</p>
+                </div>
+                <a class="btn btn--danger btn--block rotas__gps" id="btn-gps-socorrista" target="_blank" rel="noopener noreferrer" hidden>
+                  Traçar Acesso de Resgate no GPS<span class="visually-hidden"> (abre em nova aba)</span>
+                </a>
+              </div>
+            </div>
+
+            <p class="rotas__retorno" id="rotas-retorno" role="status" aria-live="polite"></p>
+
+            <div class="form__actions rotas__acoes" id="rotas-acoes" hidden></div>
+
+            <p class="rotas__aviso">
+              Rotas e pontos de apoio simulados para demonstração. Em emergência real, siga a Defesa Civil (199)
+              e o Corpo de Bombeiros (193).
+            </p>
+          </aside>
+        </div>
+
+        <!-- Filtros -->
+        <form class="filtros" id="form-filtros" role="search" aria-labelledby="filtros-titulo">
+          <h2 class="filtros__legend" id="filtros-titulo">Procurar rua</h2>
+
+          <div class="filtros__field">
+            <label class="filtros__label" for="filtro-busca">Nome da rua</label>
+            <input class="filtros__input" type="search" id="filtro-busca" name="busca" placeholder="Ex.: Rua Capachós" autocomplete="off">
+          </div>
+
+          <div class="filtros__field">
+            <label class="filtros__label" for="filtro-bairro">Bairro</label>
+            <select class="filtros__select" id="filtro-bairro" name="bairro">
+              <option value="">Todos os bairros</option>
+              <option value="Jardim Romano">Jardim Romano</option>
+              <option value="Itaim Paulista">Itaim Paulista</option>
+              <option value="Vila Jacuí">Vila Jacuí</option>
+              <option value="São Miguel Paulista">São Miguel Paulista</option>
+              <option value="Ermelino Matarazzo">Ermelino Matarazzo</option>
+            </select>
+          </div>
+
+          <div class="filtros__field">
+            <label class="filtros__label" for="filtro-risco">Risco</label>
+            <select class="filtros__select" id="filtro-risco" name="risco">
+              <option value="">Todos</option>
+              <option value="Alto">Alto</option>
+              <option value="Médio">Médio</option>
+              <option value="Baixo">Baixo</option>
+            </select>
+          </div>
+
+          <div class="filtros__actions">
+            <button type="reset" class="btn btn--ghost btn--block" id="btn-limpar-filtros">Limpar</button>
+          </div>
+        </form>
+
+        <!-- Resultados -->
+        <div>
+          <div class="resultados-bar">
+            <p class="resultados-bar__count" id="contador-resultados" role="status" aria-live="polite">Carregando ruas…</p>
+            <button type="button" class="btn btn--ghost btn--sm" id="btn-finalizadas" aria-pressed="false" hidden>Ver finalizadas</button>
+          </div>
+
+          <ul class="pontos-list" id="lista-pontos" role="list" aria-label="Ruas monitoradas"></ul>
+
+          <p class="empty-state" id="estado-vazio" hidden>
+            Nenhuma rua encontrada. Tente outro bairro, outro risco ou limpe a busca.
+          </p>
+
+          <noscript>
+            <p class="empty-state">Ative o JavaScript do navegador para ver as ruas monitoradas.</p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO: pedir apoio ou avisar a vizinhança -->
+    <section class="section section--alt" id="reportar" aria-labelledby="reportar-titulo">
+      <div class="container layout-split">
+        <div class="stack">
+          <h2 class="section__title" id="reportar-titulo">Pedir apoio ou avisar a vizinhança</h2>
+          <p class="section__lead">
+            Bueiro entupido, água subindo ou alguém que vai precisar de ajuda para sair de casa?
+            Seu aviso aparece na lista e no mapa na hora.
+          </p>
+          <aside class="notice">
+            <h3 class="notice__title">Risco de vida? Ligue agora</h3>
+            <p>Bombeiros <strong>193</strong> · SAMU <strong>192</strong> · Defesa Civil <strong>199</strong>. Este formulário não substitui os canais oficiais.</p>
+          </aside>
+          <p class="form__hint">Campos com <span class="form__required" aria-hidden="true">*</span> são obrigatórios.</p>
+        </div>
+
+        <form class="form" id="form-reporte" novalidate aria-labelledby="reportar-titulo">
+          <div class="form-feedback" id="form-feedback" role="status" aria-live="polite" tabindex="-1"></div>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Quem está avisando</legend>
+
+            <div class="form__group">
+              <label class="form__label" for="campo-nome">Seu nome <span class="form__required" aria-hidden="true">*</span></label>
+              <input class="form__input" type="text" id="campo-nome" name="nome" autocomplete="name" required aria-required="true" aria-describedby="erro-nome">
+              <span class="form__error" id="erro-nome" aria-live="polite"></span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Onde é</legend>
+
+            <div class="form__group">
+              <label class="form__label" for="campo-rua">Rua e número <span class="form__required" aria-hidden="true">*</span></label>
+              <input class="form__input" type="text" id="campo-rua" name="rua" autocomplete="street-address" placeholder="Ex.: Rua Capachós, 180" required aria-required="true" aria-describedby="dica-rua erro-rua">
+              <span class="form__hint" id="dica-rua">Se não souber o número, use o mais próximo.</span>
+              <span class="form__error" id="erro-rua" aria-live="polite"></span>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="campo-bairro">Bairro <span class="form__required" aria-hidden="true">*</span></label>
+              <select class="form__select" id="campo-bairro" name="bairro" required aria-required="true" aria-describedby="erro-bairro">
+                <option value="">Selecione o bairro</option>
+                <option value="Jardim Romano">Jardim Romano</option>
+                <option value="Itaim Paulista">Itaim Paulista</option>
+                <option value="Vila Jacuí">Vila Jacuí</option>
+                <option value="São Miguel Paulista">São Miguel Paulista</option>
+                <option value="Ermelino Matarazzo">Ermelino Matarazzo</option>
+              </select>
+              <span class="form__error" id="erro-bairro" aria-live="polite"></span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">O que está acontecendo</legend>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="campo-tipo">Tipo <span class="form__required" aria-hidden="true">*</span></label>
+                <select class="form__select" id="campo-tipo" name="tipoOcorrencia" required aria-required="true" aria-describedby="erro-tipo">
+                  <option value="">Selecione o tipo</option>
+                  <option value="Bueiro Obstruído">Bueiro Obstruído</option>
+                  <option value="Acúmulo de Água na Via">Acúmulo de Água na Via</option>
+                  <option value="Pedido de Apoio">Pedido de Apoio (pessoa precisa de ajuda)</option>
+                  <option value="Rota Bloqueada">Rota Bloqueada</option>
+                </select>
+                <span class="form__error" id="erro-tipo" aria-live="polite"></span>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="campo-urgencia">Urgência <span class="form__required" aria-hidden="true">*</span></label>
+                <select class="form__select" id="campo-urgencia" name="urgencia" required aria-required="true" aria-describedby="erro-urgencia">
+                  <option value="">Selecione a urgência</option>
+                  <option value="Crítica">Crítica</option>
+                  <option value="Moderada">Moderada</option>
+                  <option value="Preventiva">Preventiva</option>
+                </select>
+                <span class="form__error" id="erro-urgencia" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="campo-descricao">Conte o que está acontecendo <span class="form__required" aria-hidden="true">*</span></label>
+              <textarea class="form__textarea" id="campo-descricao" name="descricao" rows="5" maxlength="500" required aria-required="true" aria-describedby="dica-descricao contador-descricao erro-descricao" placeholder="Ex.: Bueiro em frente ao nº 180 tomado por entulho; mora uma senhora cadeirante no nº 176."></textarea>
+              <span class="form__hint" id="dica-descricao">Pelo menos 20 letras.</span>
+              <span class="form__counter" id="contador-descricao" aria-live="polite">0/500</span>
+              <span class="form__error" id="erro-descricao" aria-live="polite"></span>
+            </div>
+          </fieldset>
+
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary" id="btn-enviar-reporte">Enviar aviso</button>
+            <button type="reset" class="btn btn--ghost" id="btn-limpar-reporte">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Em emergência ligue <strong>193</strong> (Bombeiros), <strong>192</strong> (SAMU) ou <strong>199</strong> (Defesa Civil).</p>
+      <nav class="site-footer__nav" aria-label="Navegação do rodapé">
+        <ul role="list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="solucao.html">Mapa e rotas</a></li>
+          <li><a href="impacto.html">Como funciona</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+        </ul>
+      </nav>
+      <p>VizinhançaAlerta · Global Solution 2026/2 · FIAP · ODS 11 e 13</p>
+    </div>
+  </footer>
+
+  <script src="js/dados.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
