@@ -12,9 +12,9 @@
 
 | | |
 |---|---|
-| 🌐 **Deploy (GitHub Pages / Vercel)** | `[INSERIR LINK DO DEPLOY]` |
+| 🌐 **Deploy (GitHub Pages / Vercel)** | [https://luccamir.github.io/vizinhanca-alerta/](https://luccamir.github.io/vizinhanca-alerta/) |
 | 🎬 **Vídeo Pitch (até 3 min)** | `[INSERIR LINK PÚBLICO DO VÍDEO PITCH]` |
-| 💻 **Repositório** | `[INSERIR LINK DO REPOSITÓRIO]` |
+| 💻 **Repositório** | [https://github.com/luccamir/vizinhanca-alerta](https://github.com/luccamir/vizinhanca-alerta) |
 
 ---
 
@@ -207,7 +207,7 @@ vizinhanca-alerta/
 
 | | Link |
 |---|---|
-| 🌐 Deploy (GitHub Pages / Vercel) | `[INSERIR LINK DO DEPLOY]` |
+| 🌐 Deploy (GitHub Pages / Vercel) | [https://luccamir.github.io/vizinhanca-alerta/](https://luccamir.github.io/vizinhanca-alerta/) |
 | 🎬 Vídeo Pitch público (até 3 min) | `[INSERIR LINK PÚBLICO DO VÍDEO PITCH]` |
 
 ---
