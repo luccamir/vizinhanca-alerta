@@ -9,7 +9,7 @@ Integrantes:
 - Lucca Miranda Rodrigues - RM 571057
 - Otávio Miguel Rocha - RM 570739
 
-Link do vídeo pitch (público): [INSERIR LINK PÚBLICO DO VÍDEO PITCH]
+Link do vídeo pitch (público): https://youtu.be/lbJq3RbUBTI
 Link do site publicado: https://luccamir.github.io/vizinhanca-alerta/
 Repositório: https://github.com/luccamir/vizinhanca-alerta
 

@@ -13,7 +13,7 @@
 | | |
 |---|---|
 | 🌐 **Deploy (GitHub Pages / Vercel)** | [https://luccamir.github.io/vizinhanca-alerta/](https://luccamir.github.io/vizinhanca-alerta/) |
-| 🎬 **Vídeo Pitch (até 3 min)** | `[INSERIR LINK PÚBLICO DO VÍDEO PITCH]` |
+| 🎬 **Vídeo Pitch (até 3 min)** | [https://youtu.be/lbJq3RbUBTI](https://youtu.be/lbJq3RbUBTI) |
 | 💻 **Repositório** | [https://github.com/luccamir/vizinhanca-alerta](https://github.com/luccamir/vizinhanca-alerta) |
 
 ---
@@ -174,6 +174,7 @@ vizinhanca-alerta/
 ├── img/
 │   ├── logo.svg            # Logotipo
 │   └── avatar-placeholder.svg  # Foto provisória dos integrantes
+├── ENTREGA.pdf             # Grupo, integrantes (nome e RM) e links do pitch, site e repositório
 ├── ENTREGA.txt             # Grupo, integrantes (nome e RM) e link do pitch
 └── README.md
 ```
@@ -208,7 +209,7 @@ vizinhanca-alerta/
 | | Link |
 |---|---|
 | 🌐 Deploy (GitHub Pages / Vercel) | [https://luccamir.github.io/vizinhanca-alerta/](https://luccamir.github.io/vizinhanca-alerta/) |
-| 🎬 Vídeo Pitch público (até 3 min) | `[INSERIR LINK PÚBLICO DO VÍDEO PITCH]` |
+| 🎬 Vídeo Pitch público (até 3 min) | [https://youtu.be/lbJq3RbUBTI](https://youtu.be/lbJq3RbUBTI) |
 
 ---
 
@@ -230,11 +231,11 @@ vizinhanca-alerta/
 
 **Turma:** 1ESOB
 
-| Foto | Nome completo | RM | Papel no projeto |
-|:---:|---|---|---|
-| — | Edgard Fernandes da Costa | 569538 | `[PAPEL NO PROJETO]` |
-| — | Lucca Miranda Rodrigues | 571057 | `[PAPEL NO PROJETO]` |
-| — | Otávio Miguel Rocha | 570739 | `[PAPEL NO PROJETO]` |
+| Nome completo | RM |
+|---|---|
+| Edgard Fernandes da Costa | 569538 |
+| Lucca Miranda Rodrigues | 571057 |
+| Otávio Miguel Rocha | 570739 |
 
 ---
 
